@@ -1,114 +1,52 @@
-# ---------------------------
-# PYTHON / FASTAPI BACKEND
-# ---------------------------
-
-# Byte-compiled / optimized / DLL files
+# Python / FastAPI
 __pycache__/
 *.py[cod]
 *$py.class
-
-# Virtual environment
 venv/
 env/
 .venv/
-
-# Distribution / packaging
 build/
 dist/
 *.egg-info/
-
-# Pytest, mypy, coverage
 .pytest_cache/
 .mypy_cache/
 .coverage
 htmlcov/
-
-# Local environment variables
 .env
 .env.local
 *.env
-
-# Firebase service account keys (NEVER commit!)
+instance/
 firebase-service-account.json
 
-# SQLAlchemy cache
-instance/
-
-# VSCode settings
-.vscode/
-
-
-# ---------------------------
-# FRONTEND (React + Vite)
-# ---------------------------
-
-# Node modules
+# React / Vite / Node
 node_modules/
-
-# Vite build output
 dist/
-vite.config.ts.timestamp*
-vite.config.js.timestamp*
-
-# Lock files (optional)
-package-lock.json
-yarn.lock
-pnpm-lock.yaml
-
-# Local development logs
+.vite/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 *.log
 
-
-# ---------------------------
-# OS / EDITOR JUNK FILES
-# ---------------------------
-
-# macOS
+# OS files
 .DS_Store
 .AppleDouble
 .LSOverride
-
-# Windows
 Thumbs.db
 Desktop.ini
-
-# Linux temp files
 *~
 
-# JetBrains IDE
+# IDE files
+.vscode/
 .idea/
 *.iml
 
-
-# ---------------------------
-# DATABASE / SECRETS
-# ---------------------------
-
-# SQLite files (if ever generated)
+# DB files (optional local dumps)
 *.sqlite3
 *.db
 *.sql
-
-# PostgreSQL local dump
 pg_dump.sql
 *.dump
-
-
-# ---------------------------
-# MISC
-# ---------------------------
-
-# Logs
-logs/
-*.log
-
-# Backup files
-*.bak
-*.tmp
 
 # Cache
 .cache/
