@@ -9,7 +9,7 @@ Base.metadata.create_all(bind=engine)
 app = FastAPI(title="Lost & Found @ SCSU API")
 
 origins = [
-    "http://localhost:5173",
+    "http://localhost:5173","https://proud-desert-02f808d1e.3.azurestaticapps.net"
 ]
 
 app.add_middleware(
