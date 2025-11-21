@@ -1,16 +1,36 @@
-# React + Vite
+# SCSU Lost-and-Found
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Lost & Found @ SCSU is a full-stack web app that helps students report, browse, and claim lost/found items on campus.  
+Built with **FastAPI + PostgreSQL** on the backend and **React + Vite + Tailwind CSS** on the frontend.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## React Compiler
+- Report lost or found items with photos, location, and contact details  
+- Browse all active items, with search and filters  
+- Claim items and view your own claims  
+- Simple admin dashboard to mark items as resolved/archived  
+- JWT-based authentication for secure login
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Backend:** FastAPI, PostgreSQL, SQLAlchemy  
+- **Frontend:** React, Vite, Tailwind CSS  
+- **Auth:** JWT tokens stored in HTTP-only cookies  
+- **Deployment:** Azure App Service (API) + Azure Static Web Apps (client)
+
+---
+
+## Development – Backend
+
+```bash
+cd backend
+python -m venv venv
+source venv/bin/activate   # Windows: venv\Scripts\activate
+pip install -r requirements.txt
+
+# set env vars for DB connection, JWT secret, etc.
+uvicorn app.main:app --reload
