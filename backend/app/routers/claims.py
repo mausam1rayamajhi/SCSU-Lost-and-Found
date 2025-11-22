@@ -8,7 +8,7 @@ from ..deps import get_current_user, require_admin
 
 router = APIRouter(prefix="/claims", tags=["claims"])
 
-@router.post("/", response_model=schemas.ClaimOut)
+@router.post("", response_model=schemas.ClaimOut)
 def create_claim(
     claim_in: schemas.ClaimCreate,
     db: Session = Depends(get_db),
@@ -39,7 +39,7 @@ def my_claims(
         .all()
     )
 
-@router.get("/", response_model=List[schemas.ClaimOut])
+@router.get("", response_model=List[schemas.ClaimOut])
 def list_all_claims(
     db: Session = Depends(get_db),
     _: models.User = Depends(require_admin),
