@@ -8,7 +8,7 @@ from ..deps import get_current_user
 
 router = APIRouter(prefix="/items", tags=["items"])
 
-@router.post("/", response_model=schemas.ItemOut)
+@router.post("", response_model=schemas.ItemOut)
 def create_item(
     item_in: schemas.ItemCreate,
     db: Session = Depends(get_db),
@@ -24,7 +24,7 @@ def create_item(
     db.refresh(item)
     return item
 
-@router.get("/", response_model=List[schemas.ItemOut])
+@router.get("", response_model=List[schemas.ItemOut])
 def list_items(
     db: Session = Depends(get_db),
     status: Optional[models.ItemStatus] = Query(None),
