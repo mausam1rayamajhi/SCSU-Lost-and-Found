@@ -6,7 +6,7 @@ const API_BASE_URL =
 
 const api = axios.create({
   baseURL: API_BASE_URL,
-  withCredentials: true, // cookies / auth
+  withCredentials: false, 
 });
 
 api.interceptors.request.use((config) => {
