@@ -2,11 +2,11 @@ import axios from "axios";
 
 const API_BASE_URL =
   import.meta.env.VITE_API_BASE_URL ||
-  "http://localhost:8000";   
+  "https://scsu-lost-found-backend-cma4hucnhydvh4dv.eastus2-01.azurewebsites.net"; // safe fallback
 
 const api = axios.create({
   baseURL: API_BASE_URL,
-  withCredentials: true,     // Important for cookies / auth
+  withCredentials: true, // cookies / auth
 });
 
 api.interceptors.request.use((config) => {
