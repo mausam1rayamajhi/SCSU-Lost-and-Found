@@ -1,12 +1,12 @@
 fastapi
-psycopg[binary]
 uvicorn[standard]
 gunicorn
 sqlalchemy
 psycopg2-binary
 python-dotenv
 python-jose[cryptography]
-passlib[bcrypt]
+bcrypt==3.2.2 
+passlib[bcrypt]==1.7.4
 pydantic[email]
 alembic
 python-multipart
