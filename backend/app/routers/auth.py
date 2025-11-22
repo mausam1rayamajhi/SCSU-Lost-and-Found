@@ -38,7 +38,38 @@ def register(user_in: schemas.UserCreate, db: Session = Depends(get_db)):
     db.refresh(user)
     return user
 
+@router.post("/register-admin", response_model=schemas.UserOut)
+def register_admin(
+    user_in: schemas.UserCreate,
+    db: Session = Depends(get_db),
+    admin_setup_token: str = Header(..., alias="X-Admin-Setup-Token"),
+):
+    """
+    Create an admin user. Protected by a secret header.
+    Only you (who know the token) can call this.
+    """
+    if admin_setup_token != settings.ADMIN_SETUP_TOKEN:
+        raise HTTPException(status_code=403, detail="Invalid admin setup token")
 
+    existing = db.query(models.User).filter(models.User.email == user_in.email).first()
+    if existing:
+        raise HTTPException(status_code=400, detail="Email already registered")
+
+    user = models.User(
+        email=user_in.email,
+        name=user_in.name,
+        hashed_password=hash_password(user_in.password),
+        role=models.UserRole.ADMIN,
+    )
+    db.add(user)
+    try:
+        db.commit()
+    except IntegrityError:
+        db.rollback()
+        raise HTTPException(status_code=400, detail="Email already registered")
+
+    db.refresh(user)
+    return user
 
 
 @router.post("/login", response_model=schemas.Token)
