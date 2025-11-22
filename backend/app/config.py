@@ -14,5 +14,5 @@ class Settings:
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60 * 24  # 1 day
 
 
-    ADMIN_SETUP_TOKEN: str = os.getenv("ADMIN_SETUP_TOKEN", "admin-steup")
+    ADMIN_SETUP_TOKEN: str = os.getenv("ADMIN_SETUP_TOKEN", "scsu-lost-and-found-password")
 settings = Settings()
