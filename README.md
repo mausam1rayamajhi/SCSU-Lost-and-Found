@@ -77,6 +77,8 @@ npm install
 npm run dev
 
 
-Author
-GitHub: https://github.com/mausam1rayamajhi
-LinkedIn: https://linkedin.com/in/mausamrayamajhi
+Team Members
+Mausam Rayamajhi
+Haidara Alou
+Malik Zulaykha
+Vue Cha
